@@ -14,7 +14,7 @@ const createPDF = async () => {
   ageField.setText("26");
   weightField.setText("83");
 
-  const pdfBytes = pdfDoc.save();
+  const pdfBytes = await pdfDoc.save();
   const name = `test${Date.now()}.pdf`;
 
   fs.writeFileSync(`./${name}`, pdfBytes);
